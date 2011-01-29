@@ -22,13 +22,13 @@ do
     then
     plural=""
     fi
-    $s_count = `grep -o "$sing" artist_names | wc -l`
-    echo $s_count
-    #printf "%s\n" "$plural";
+    s_count=`grep -ow "$sing" artist_names | wc -l`
+    p_count=`grep -ow "$plural" artist_names | wc -l`
+    sum=$(($s_count + $p_count))
+    printf "%i %s:%i %s:%i\n" "$sum" "$sing" $s_count "$plural" $p_count
 done >> animals_names 
 
-#LC_ALL='C' grep -w -o -f animals_names artist_names | sort | uniq -c | sort -nrk1,1 | head -n10
-
+sort -nrk1,1 animals_names | head -n20
 
 
 
