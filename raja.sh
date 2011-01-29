@@ -1,14 +1,17 @@
 #! /bin/sh
 # Author: Idris Raja
 # Email : idris.raja@gmail.com
+# Reply to Quora question http://www.quora.com/Which-animal-has-been-used-most-frequently-for-a-band-name
+# Which animal has been used most frequently for a band name?
+# Much thanks to Erik Frey for his ingenious approach from which I borrowed heavily
 
 # You may need to update the date part of this link 
 wget ftp://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/20110126-000001/mbdump.tar.bz2
 tar xvjf mbdump.tar.bz2
-cut -f2 -d"     " mbdump/artist | tr '[:upper:]' '[:lower:]' > artist_names
+awk -F'\t' '{print $2}' mbdump/artist | tr '[:upper:]' '[:lower:]' > artist_names
 
 #  You may also need to update the date part of this link
-curl http://download.freebase.com/datadumps/2011-01-20/browse/biology/animal.tsv | awk -F'\t' '{print $1}' | tr '[:upper:]' '[:lower:]' > animal_names
+curl -s http://download.freebase.com/datadumps/2011-01-20/browse/biology/animal.tsv | awk -F'\t' '{print $1}' | tr '[:upper:]' '[:lower:]' > animal_names
 
 LC_ALL='C'
 exec< animal_names
