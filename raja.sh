@@ -30,9 +30,6 @@ do
     p_count=`grep -ow "$plural" artist_names | wc -l`
     sum=$(($s_count + $p_count))
     printf "%i %s:%i %s:%i\n" "$sum" "$sing" $s_count "$plural" $p_count
-done >> animals_names 
+done >> totals 
 
-sort -nrk1,1 animals_names | head -n20
-
-
-
+sort -nrk1,1 totals | head -n20
