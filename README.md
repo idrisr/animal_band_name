@@ -1,5 +1,4 @@
-Follow-up response to this Quora
-[question](http://www.quora.com/Band-Names/Which-animal-has-been-used-most-frequently-for-a-band-name)
+Follow-up response to this Quora [question](http://www.quora.com/Band-Names/Which-animal-has-been-used-most-frequently-for-a-band-name)
 =================================================
 
 Band of Horses, Arctic Monkeys, Snoop Dogg... which animal has been used most
